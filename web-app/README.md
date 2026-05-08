@@ -13,3 +13,9 @@ Save — write those vectors to your vector store (Pinecone)
 Then at query time, the API route does the reverse: embed the user's question, find the closest matching chunks in the store, and pass those chunks as context to the chat model.
 
 So ingest.js is the "prep the knowledge base" step. You run it once (or re-run it when your source content changes), and the web app just reads from the result.
+
+ETL pipeline (Extract, Transform, Load) — applied to RAG:
+
+Extract — fetch the source content
+Transform — split and embed it
+Load — write to the vector store

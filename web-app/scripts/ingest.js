@@ -13,5 +13,3 @@ const docs = await cheerioLoader.load();
 
 console.assert(docs.length === 1);
 console.log(`Total characters: ${docs[0].pageContent.length}`);
-
-// node ingest.js to run

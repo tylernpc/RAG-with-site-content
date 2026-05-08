@@ -1,6 +1,7 @@
 import "cheerio";
 import { CheerioWebBaseLoader } from "@langchain/community/document_loaders/web/cheerio";
 import { RecursiveCharacterTextSplitter } from "@langchain/textsplitters";
+import { VectorStore } from "@langchain/core/vectorstores";
 
 // doc loader portion
 const pTagSelector = "p";
@@ -25,3 +26,5 @@ const splitter = new RecursiveCharacterTextSplitter({
 const allSplits = await splitter.splitDocuments(docs);
 
 console.log(`Split blog post into ${allSplits.length} sub-documents.`)
+
+await VectorStore.addDocuments(allSplits);

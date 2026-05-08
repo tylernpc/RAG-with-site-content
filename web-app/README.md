@@ -19,3 +19,5 @@ ETL pipeline (Extract, Transform, Load) — applied to RAG:
 Extract — fetch the source content
 Transform — split and embed it
 Load — write to the vector store
+
+node --env-file=../.env.local test.js
